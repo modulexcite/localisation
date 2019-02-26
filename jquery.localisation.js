@@ -87,7 +87,8 @@ $.localise = function(packages, settings, loadBase, path, timeout, async, comple
 		if (settings.loadBase) {
 			files.push(paths[0] + pkg + '.js');
 		}
-		if (lang.length >= 2) {
+		// match format "en" or "en-US" not both
+		if (lang.length == 2) {
 			files.push(paths[1] + pkg + '-' + lang.substring(0, 2) + '.js');
 		}
 		if (lang.length >= 5) {
